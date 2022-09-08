@@ -37,7 +37,7 @@ public class TasksController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Tasks add( @RequestBody TasksDTO dto ) {
+    public Tasks add( @RequestBody @Valid TasksDTO dto ) {
         Integer client_id = dto.getClient_id();
         Clients client = clientsRepository
                 .findById(client_id)
